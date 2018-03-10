@@ -1,34 +1,51 @@
 {
-  "name": "nodejs-ex",
-  "version": "0.0.1",
-  "description": "Node.js sample app for OpenShift 3",
-  "main": "server.js",
-  "dependencies": {
-    "chai": "^3.5.0",
-    "chai-http": "^2.0.1",
-    "ejs": "^2.4.1",
-    "express": "^4.13.4",
-    "mocha": "^2.4.5",
-    "mongodb": "^2.1.16",
-    "morgan": "^1.7.0",
-    "object-assign":"4.1.0"
-  },
-  "engine": {
-    "node": "*",
-    "npm": "*"
-  },
-  "scripts": {
-    "start": "node server.js",
-    "test": "IP=0.0.0.0 PORT=3030 mocha --timeout 5000 tests/*_test.js"
-  },
+  "name": "dadaboom",
+  "version": "1.0.0",
+  "description": "Dadaboom",
+  "author": "Rafael Paz",
   "repository": {
     "type": "git",
-    "url": "http://github.com/openshift/nodejs-ex.git"
+    "url": "git+https://ohsofree@bitbucket.org/ohsofree/dadaboom.git"
   },
-  "author": "Steve Speicher <sspeiche@gmail.com>",
-  "license": "CC-BY-1.0",
-  "bugs": {
-    "url": "http://github.com/openshift/nodejs-ex/issues"
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "webpack -p --progress --profile --colors && node server",
+    "start:dev": "node server"
   },
-  "homepage": "http://github.com/openshift/nodejs-ex"
+  "dependencies": {
+    "autoprefixer": "^7.1.2",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.17.2",
+    "connect-history-api-fallback": "^1.3.0",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.5",
+    "express": "^4.15.4",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^2.30.1",
+    "lodash": "^4.17.5",
+    "mongoose": "^4.11.7",
+    "node-sass": "^4.5.3",
+    "nodemailer": "^4.6.2",
+    "nodemon": "^1.11.0",
+    "postcss-loader": "^2.0.6",
+    "react": "^15.6.1",
+    "react-device-detect": "^0.1.0",
+    "react-dom": "^15.6.1",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "react-router": "^4.1.2",
+    "react-router-dom": "^4.1.2",
+    "react-typed": "^1.0.8",
+    "react-youtube": "^7.5.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.5",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.18.2",
+    "webpack-merge": "^4.1.0",
+    "whatwg-fetch": "^2.0.3"
+  }
 }
