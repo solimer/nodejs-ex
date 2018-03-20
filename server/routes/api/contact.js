@@ -18,10 +18,12 @@ module.exports = (app) => {
 	app.post('/api/contactus', function (req, res, next) {
 		let person = new Person({
 			name: req.body.name,
-			email: req.body.email,
 			phone: req.body.phone,
-			message: req.body.message
 		});
+		if(req.body.email)
+			person.email = req.body.email;
+		if (req.body.message)
+			person.message = req.body.message;
 		person.save().then(() => {
 			const transporter = nodemailer.createTransport({
 				service: 'gmail',
@@ -33,6 +35,7 @@ module.exports = (app) => {
 				textString += "Email: " + req.body.email + "\n";
 			if (req.body.message)
 				textString += "Message: " + req.body.message + "\n";
+			textString += "Source: " + req.body.source;
 
 			const mailOptions = {
 				from: mailProperties.user,

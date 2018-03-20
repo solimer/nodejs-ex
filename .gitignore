@@ -1,6 +1,5 @@
 # Compiled files
 dist/
-
 # Node stuff
 node_modules
 .npm
@@ -19,5 +18,5 @@ $RECYCLE.BIN/
 .DS_Store
 .Spotlight-V100
 .Trashes
-.idea/
+.idea
 .vscode/

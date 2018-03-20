@@ -1,29 +1,24 @@
 import React, { Component } from 'react';
-
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-import Preloader from '../Preloader/preloader';
-import About from '../About/About';
-import Services from '../Services/Services';
-import Portfolio from '../Portfolio/Portfolio';
-import Testimonials from '../Testimonials/Testimonials';
-import Blog from '../Blog/Blog';
-import Contact from '../Contact/Contact';
-import Counter from "../Counter/Counter";
+import {
+	BrowserRouter as Router,
+	Route,
+	Link,
+	Switch
+} from 'react-router-dom'
+import Homepage from '../Home/Homepage';
+import NotFound from "../App/NotFound";
+import LandingPageKids from "../LP/LandingPageKids";
+import LandingPage from "../LP/LandingPage";
 
 const App = () => (
-	<div>
-		<Preloader/>
-		<Header/>
-		<About/>
-		<Services/>
-		<Counter/>
-		<Portfolio/>
-		<Testimonials/>
-		<Blog/>
-		<Contact/>
-		<Footer/>
-	</div>
+	<Router>
+		<Switch>
+			<Route exact path={"/"} component={Homepage}/>
+			<Route path={"/Contact"} component={LandingPage}/>
+			<Route path={"/SchoolContact"} component={LandingPageKids}/>
+			<Route component={NotFound}/>
+		</Switch>
+	</Router>
 );
 
 export default App;
